@@ -14,7 +14,7 @@ This project is a Blackjack game application designed to provide users with an e
 
 3. **Statistics Activity**  
    A dedicated section for users to view their game statistics, including wins, losses, and other gameplay insights to track their progress.  
-   [View Statistics Activity Prototype](https://www.figma.com/proto/j4ltwNKbHNpCgS29elX2Io/Untitled?node-id=21-66&t=8TmcHgdI53NPCTeA-1)
+   [View Statistics Activity Prototype](https://www.figma.com/proto/j4ltwNKbHNpCgS29elX2Io/Untitled?node-id=33-7707&t=8TmcHgdI53NPCTeA-1)
 
 ## How to Use
 
