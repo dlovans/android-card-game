@@ -9,6 +9,90 @@
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#2F2F2F"
+        app:cardCornerRadius="10dp"
+        android:padding="10dp"
+        app:cardElevation="12dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#2F2F2F"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="15dp"
+            >
+            <TextView
+                android:id="@+id/tv_winner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Dealer wins!"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/tv_wins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_winner"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Wins:0"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/tv_losses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_wins"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Losses: 0"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="OK"
+                android:textColor="#D3D3D3"
+                android:backgroundTint="#36454F"
+                android:paddingHorizontal="40dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_hand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="HAND"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <GridLayout
+        android:id="@+id/card_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:columnCount="4"
+        android:rowCount="4"
+        android:layout_margin="16dp">
+    </GridLayout>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/game_btn_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,6 +109,7 @@
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_hit_me"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:text="Hit Me Up!"
@@ -34,6 +119,7 @@
                 android:layout_weight="1"/>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_stand"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:text="Stand!"
