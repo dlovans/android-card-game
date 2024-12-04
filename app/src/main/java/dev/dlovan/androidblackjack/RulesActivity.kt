@@ -23,7 +23,7 @@ class RulesActivity : AppCompatActivity() {
 
         startGameBtn = findViewById(R.id.btn_start_game)
         startGameBtn.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, BJActivity::class.java))
         }
 
     }

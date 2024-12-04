@@ -11,16 +11,16 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import dev.dlovan.androidblackjack.databinding.ActivityMainBinding
+import dev.dlovan.androidblackjack.databinding.ActivityBjBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class BJActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBjBinding
     private val gridViewModel: GridViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityBjBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -32,22 +32,18 @@ class MainActivity : AppCompatActivity() {
             updateGrid(items)
         }
 
-
         binding.btnHitMe.setOnClickListener {
+            binding.btnStand.isEnabled = true
             gridViewModel.addItem(PlayerType.PLAYER)
             this.evaluateRound()
         }
-
         binding.btnStand.setOnClickListener {
             this.evaluateRound(true)
         }
-
-
         binding.btnRestart.setOnClickListener {
             gridViewModel.resetGame()
             binding.cvResult.visibility = View.GONE
             binding.btnHitMe.isEnabled = true
-            binding.btnStand.isEnabled = true
         }
     }
 

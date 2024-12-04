@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#36454F"
-    tools:context=".MainActivity">
+    tools:context=".BJActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_result"
@@ -110,6 +110,7 @@
                 android:textSize="15sp"
                 app:cornerRadius="0dp"
                 android:backgroundTint="#E91E63"
+                android:enabled="false"
                 android:layout_weight="1"/>
         </LinearLayout>
 
