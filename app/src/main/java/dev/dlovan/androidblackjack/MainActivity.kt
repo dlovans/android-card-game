@@ -111,8 +111,7 @@ class MainActivity : AppCompatActivity() {
             var dealerValue = 0
             var dealerHasAce = false
             while (dealerValue < 17) {
-                val cardValue = gridViewModel.addItem(PlayerType.DEALER)
-                when (cardValue) {
+                when (val cardValue = gridViewModel.addItem(PlayerType.DEALER)) {
                     "A" -> {
                         dealerValue += 11
                         dealerHasAce = true
